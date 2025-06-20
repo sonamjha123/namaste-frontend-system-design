@@ -134,6 +134,156 @@ Supports: Uploads | Downloads | Rename | Delete
 
 **Example:**
 
-Your Day 3 GitHub notes are updated, detailed, and tailored for a **Senior Frontend Developer (10+ years)** with proper explanations and architecture diagrams.
+## Day 3 — June 20
 
-Let me know if you want these in a **Markdown file for GitHub**, or want to add **real-world examples (like OpenAI’s API, GitHub REST API)** or even a **Postman demo guide**.
+### Namaste Frontend Design: REST API Notes (Senior Frontend Developer Perspective)
+
+---
+
+### 1. **What is REST API?**
+
+REST (Representational State Transfer) is an architectural style that allows communication between client and server using HTTP protocol.
+
+A **REST API** is an interface that helps the frontend interact with backend services (data exchange via JSON/XML formats).
+
+---
+
+### 2. **Why REST? Benefits**
+
+1. **Simplicity & Ease of Use** — Easy to understand, design, and use.
+2. **Stateless** — Each API call is independent; no session/data stored on server between requests.
+3. **Scalability** — Supports load balancing; easily scalable system.
+4. **Flexible Data Formats** — JSON/XML/HTML/text.
+5. **Uniform Interface** — Clear standard rules (HTTP verbs, status codes).
+6. **Caching** — Improves performance for non-changing data (like static menu or catalog).
+7. **Separation of Concerns** — Frontend and backend can be built in different tech stacks.
+8. **Interoperability** — Language agnostic — clients and servers can be in different languages.
+9. **Easy Testing & Debugging** — Tools like Postman help in API validation.
+10. **Security** — Supports various authentication mechanisms (API keys, OAuth, JWT).
+
+---
+
+### 3. **REST API Building Blocks**
+
+#### **Architecture Diagram:**
+
+```
+   Client (Browser / Mobile)
+            |    
+     [ HTTP Request ]   --->  Server (Backend)
+     <--- [ HTTP Response ]
+```
+
+#### **Request Components:**
+
+* **URL** (Uniform Resource Locator)
+* **HTTP Method** (GET, POST, PUT, DELETE)
+* **Headers** (Metadata — e.g., Authentication, Content-Type)
+* **Body** (Data Payload for POST/PUT)
+
+#### **Response Components:**
+
+* **Status Line** (HTTP Version + Status Code + Reason Phrase)
+* **Headers** (Metadata returned)
+* **Body** (Actual Response Data)
+
+#### **Common HTTP Status Codes:**
+
+* **200 OK** — Successful
+* **201 Created** — Resource created
+* **400 Bad Request** — Client error
+* **401 Unauthorized** — Auth required
+* **404 Not Found** — Resource missing
+* **500 Internal Server Error** — Server failure
+
+---
+
+### 4. **How to Build REST API?**
+
+1. Decide endpoints — what resources (e.g., `/users`, `/products`)?
+2. Choose HTTP methods — GET/POST/PUT/DELETE.
+3. Design response format (JSON recommended).
+4. Handle error codes properly.
+5. Secure with authentication (API key, OAuth, JWT).
+
+---
+
+### 5. **Consume REST API (Using Postman)**
+
+* Install Postman.
+* Choose Method (GET/POST/etc).
+* Enter URL.
+* Add Headers (if required).
+* Send Request & View Response.
+
+---
+
+### 6. **HTTP 1 / 2 / 3 Differences (High-Level)**
+
+| Feature       | HTTP/1.1              | HTTP/2                   | HTTP/3 (QUIC)                 |
+| ------------- | --------------------- | ------------------------ | ----------------------------- |
+| Connection    | Multiple TCP          | Single TCP (Multiplexed) | UDP (Multiplexed)             |
+| Performance   | Head-of-Line Blocking | Faster, binary framing   | Low latency, built for mobile |
+| Security      | Optional TLS          | Mandatory TLS            | Mandatory TLS                 |
+| Example Usage | Legacy systems        | Modern web apps          | Experimental/Latest           |
+
+---
+
+### 7. **REST API Best Practices (Creator & Consumer Perspective)**
+
+#### **For API Creator:**
+
+* Use clear & consistent naming (`/users`, `/products`).
+* Support filtering, sorting, pagination (`?limit=10&page=2`).
+* Use proper HTTP status codes.
+* Secure APIs with auth tokens.
+* Provide versioning (`/v1/`).
+
+#### **For API Consumer:**
+
+* Handle errors & edge cases.
+* Use caching for GET requests.
+* Implement retries for transient failures.
+* Validate API responses.
+
+---
+
+### 8. **Advanced Concepts - High Level**
+
+#### **System Design Architecture View:**
+
+```
+          [ Client (Frontend: React/Angular) ]
+                        |
+                        V
+                 [ REST API (HTTP) ]
+                        |
+            +----------------------+
+            |     Backend Server    |
+            +----------------------+
+                        |
+                 [ Database ]
+```
+
+* **1-Tier:** UI + Backend + DB = Same system (Monolith)
+* **2-Tier:** Frontend & Backend separated (API in-between)
+* **3-Tier:** Frontend -> API Gateway -> Backend + DB (Cloud Native)
+
+#### **Role of REST API:**
+
+* Acts as contract/interface between client and server.
+* Defines format, protocol, and behavior of communication.
+
+#### **Communication Format:**
+
+* Mostly JSON (lightweight, easy to parse).
+
+---
+
+### References:
+
+* [https://dummyjson.com/](https://dummyjson.com/)
+* Namaste Frontend System Design Course
+
+---
+
