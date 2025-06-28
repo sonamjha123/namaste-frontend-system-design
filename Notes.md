@@ -287,3 +287,168 @@ A **REST API** is an interface that helps the frontend interact with backend ser
 
 ---
 
+### 🚀 **Express.js Setup**
+
+1️⃣ **Initialize Node project**
+
+```bash
+npm init -y
+```
+
+2️⃣ **Install Express**
+
+```bash
+npm install express --save
+```
+
+3️⃣ **(Optional) Use ES6 Modules**
+In `package.json`, set:
+
+```json
+{
+  "name": "systemdesign",
+  "version": "1.0.0",
+  "description": "RestApi",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SJ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
+```
+
+4️⃣ **Create `index.js`**
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json()); // Middleware to parse JSON body
+
+const PORT = 5111;
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+```
+
+---
+
+### 🛠 **Building Blocks**
+
+* **URL Parts**
+
+  ```
+  http://www.example.com/forum/questions/tag?key=value#top
+  ```
+
+  | Part                   | Description                   |
+  | ---------------------- | ----------------------------- |
+  | `http://`              | Scheme                        |
+  | `www`                  | Subdomain                     |
+  | `example`              | Domain                        |
+  | `com`                  | TLD                           |
+  | `/forum/questions/tag` | Path                          |
+  | `?key=value`           | Query parameter               |
+  | `#top`                 | Fragment (not sent to server) |
+
+---
+
+### ✅ **CRUD API Features**
+
+Example Base URL:
+
+```
+http://localhost:5111/api/todos
+http://localhost:5111/api/users
+```
+
+| Feature     | HTTP Method | Example                                        |
+| ----------- | ----------- | ---------------------------------------------- |
+| Create Todo | POST        | `POST /api/todos`                              |
+| Read Todos  | GET         | `GET /api/todos`                               |
+| Update Todo | PUT/PATCH   | `PUT /api/todos/:id` or `PATCH /api/todos/:id` |
+| Delete Todo | DELETE      | `DELETE /api/todos/:id`                        |
+
+Other HTTP methods:
+
+* `HEAD` — Same as GET but no response body
+* `OPTIONS` — Describe supported HTTP methods
+
+---
+
+### 📝 **Sample Routes**
+
+```javascript
+// Read all todos
+app.get('/api/todos', (req, res) => {
+  res.send('List of todos');
+});
+
+// Create a todo
+app.post('/api/todos', (req, res) => {
+  res.send('Todo created');
+});
+
+// Update a todo
+app.put('/api/todos/:id', (req, res) => {
+  res.send(`Todo ${req.params.id} updated`);
+});
+
+// Delete a todo
+app.delete('/api/todos/:id', (req, res) => {
+  res.send(`Todo ${req.params.id} deleted`);
+});
+```
+
+---
+
+### ⚡ **Auto-start server during development**
+
+Install **nodemon**:
+
+```bash
+npm install nodemon --save-dev
+```
+
+Add to `package.json` scripts:
+
+```json
+"scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js"
+}
+```
+
+Run:
+
+```bash
+npm run dev
+```
+
+---
+
+### 📌 **System Design Angle**
+
+* Think in terms of RESTful routes.
+* Modularize: Separate routes, controllers, and models (even in simple TODO app).
+* API best practice: Versioning (e.g., `/api/v1/todos`).
+
+---
+
+👉 **Next enhancement ideas**
+
+* Add validations (e.g., using `Joi` or `express-validator`).
+* Connect to a DB (MongoDB / PostgreSQL).
+* Implement authentication (JWT / OAuth).
+
+---
+
+
+
