@@ -511,5 +511,41 @@ Below is a cleaned‑up, expanded set of your HTTP headers and status‑code not
 ---
 
 Feel free to adjust examples to your specific domains or add any other headers your services use (e.g. custom `X-` headers).
+### REST vs GraphQL
+
+Here's a clear breakdown of **REST vs GraphQL** to help you see the differences and when to use each:
+
+| Feature                            | **REST**                                           | **GraphQL**                                                                       |
+| ---------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Data Fetching**                  | Multiple endpoints returning fixed data structures | Single endpoint with flexible queries                                             |
+| **Over-fetching / Under-fetching** | Common (you may get too much or too little data)   | Rare (you query exactly what you need)                                            |
+| **Versioning**                     | Often requires new versions for breaking changes   | Versioning typically avoided by evolving schema                                   |
+| **Request Types**                  | HTTP methods like GET, POST, PUT, DELETE           | Always POST (usually), query/mutation/subscription inside request body            |
+| **Performance**                    | Can require multiple requests                      | Can fetch all needed data in a single request                                     |
+| **Learning Curve**                 | Easier for beginners; widely known                 | Requires understanding of schema, queries, resolvers                              |
+| **Tooling**                        | Mature ecosystem (Postman, Swagger/OpenAPI)        | Powerful tools (GraphQL Playground, Apollo)                                       |
+| **Caching**                        | Easily cached at HTTP level with GET requests      | More complex caching, often client-managed (Apollo, Relay)                        |
+| **Error Handling**                 | HTTP status codes + messages                       | Always 200 OK; errors inside response object                                      |
+| **Use Case Examples**              | Traditional CRUD APIs, public APIs                 | Complex systems needing flexible data access (e.g., apps with varying data needs) |
+
+---
+
+### When to Use:
+
+* **REST**:
+
+  * Simple CRUD APIs
+  * Public-facing APIs with strong HTTP caching
+  * Teams familiar with standard web architecture
+
+* **GraphQL**:
+
+  * Complex front-end apps (especially SPAs or mobile)
+  * Need to reduce round trips or customize data shape
+  * Rapidly changing data requirements
+
+---
+
+
 
 
