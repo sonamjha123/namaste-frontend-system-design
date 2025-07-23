@@ -510,10 +510,6 @@ Below is a cleaned‑up, expanded set of your HTTP headers and status‑code not
 
 ---
 
-Sure! Here is the **GraphQL Overview and Key Concepts** formatted in clean Markdown for your **GitHub Notes**:
-
----
-
 # GraphQL — Overview and Key Concepts
 
 ## What is GraphQL?
@@ -664,4 +660,4 @@ const resolvers = {
 
 
 ---
-
+#### Refer this for creating project and start to create an application : https://www.apollographql.com/docs/apollo-server/getting-started
