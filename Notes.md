@@ -660,4 +660,187 @@ const resolvers = {
 
 
 ---
-#### Refer this for creating project and start to create an application : https://www.apollographql.com/docs/apollo-server/getting-started
+## Communication Techniques
+Sure! Here's a clear and practical breakdown of **communication techniques** used between **clients (like browsers)** and **servers (like APIs)**. These methods help in sending/receiving data — especially useful for **real-time apps, APIs, and webhooks**.
+
+---
+
+## 🔄 1. **Short Polling**
+
+### 📌 What it is:
+
+Client sends a request to the server **every few seconds**, asking,
+*"Any updates yet?"*
+
+### 🕑 Behavior:
+
+* Request → Wait → Response → Repeat.
+* Always waits for server to respond before asking again.
+
+### 🧠 Example:
+
+```js
+setInterval(() => {
+  fetch('/check-notifications');
+}, 3000);
+```
+
+### ✅ Pros:
+
+* Simple to implement.
+* Works everywhere.
+
+### ❌ Cons:
+
+* **Wasteful** if there’s no new data.
+* **Laggy** – updates only as fast as the interval.
+
+---
+
+## 🔁 2. **Long Polling**
+
+### 📌 What it is:
+
+Client makes a request and **waits** until the server has new data.
+
+### 🕑 Behavior:
+
+* Request → Server **holds it open** until it has something → Respond → Client immediately requests again.
+
+### 🔁 Flow:
+
+1. Client: “Any updates?”
+2. Server: “Not yet... still waiting…”
+3. Server: “Here’s new data!”
+4. Client: “Cool, asking again...”
+
+### ✅ Pros:
+
+* Feels more real-time than short polling.
+* Less frequent requests than short polling.
+
+### ❌ Cons:
+
+* Server has to **hold connections**, which can be inefficient.
+* Not as fast as WebSockets.
+
+---
+
+## 🔌 3. **WebSocket**
+
+### 📌 What it is:
+
+A **persistent, bidirectional** connection between client and server. Think of it like a live phone call.
+
+### 🧠 Use case:
+
+* Real-time apps: chat, stock prices, multiplayer games.
+
+### 🔁 Flow:
+
+1. Client connects via WebSocket handshake.
+2. Both client and server can send data **anytime** over one open connection.
+
+### ✅ Pros:
+
+* **Fastest** real-time communication.
+* Bi-directional: both client/server can push data.
+
+### ❌ Cons:
+
+* More complex to implement than HTTP.
+* Needs a supporting server + protocol.
+* Can be blocked by strict firewalls.
+
+---
+
+## 📡 4. **Server-Sent Events (SSE)**
+
+### 📌 What it is:
+
+A **one-way** real-time stream: server → client. Based on HTTP.
+
+### 🕑 Behavior:
+
+* Client opens a connection.
+* Server pushes new data as events (text-based format).
+
+```js
+const source = new EventSource('/stream');
+source.onmessage = (e) => console.log(e.data);
+```
+
+### ✅ Pros:
+
+* Simple, built on HTTP.
+* Auto-reconnect + lightweight.
+
+### ❌ Cons:
+
+* **One-way** only (no client → server).
+* Not supported in all browsers.
+* Not ideal for chat or bidirectional comms.
+
+---
+
+## 🔔 5. **Webhook**
+
+### 📌 What it is:
+
+Server sends a request to another server when an event happens — **"push model" for servers**.
+
+> Think: "Notify me when X happens."
+
+### 🧠 Example:
+
+* Stripe webhook: Sends a POST to your server when a payment succeeds.
+
+```json
+POST /webhook
+{
+  "event": "payment_success",
+  "data": {...}
+}
+```
+
+### ✅ Pros:
+
+* Real-time and **no need to poll**.
+* Great for automation and integration.
+
+### ❌ Cons:
+
+* You must host a server to receive them.
+* Can be insecure if not validated properly.
+
+---
+
+## 🔧 6. **Other Techniques**
+
+### ✅ GraphQL Subscriptions:
+
+* Real-time with WebSockets in a GraphQL setup.
+
+### ✅ MQTT (Message Queue Telemetry Transport):
+
+* Lightweight publish-subscribe messaging, used in IoT.
+
+### ✅ gRPC with Streaming:
+
+* Real-time streaming RPCs with better performance over Protobuf.
+
+---
+
+## 🧠 Summary Table
+
+| Technique     | Direction       | Real-Time? | Complexity | Use Case                    |
+| ------------- | --------------- | ---------- | ---------- | --------------------------- |
+| Short Polling | Client → Server | ❌ No       | 🟢 Easy    | Status updates, legacy APIs |
+| Long Polling  | Client → Server | ⚠️ Semi    | 🟡 Medium  | Chat, notifications         |
+| WebSocket     | Bi-directional  | ✅ Yes      | 🔴 High    | Chat, games, live prices    |
+| SSE           | Server → Client | ✅ Yes      | 🟡 Medium  | Notifications, feeds        |
+| Webhook       | Server → Server | ✅ Yes      | 🟡 Medium  | Payments, events            |
+
+---
+
+
