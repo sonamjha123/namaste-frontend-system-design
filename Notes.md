@@ -679,6 +679,12 @@ Client sends a request to the server **every few seconds**, asking,
 
 ### 🧠 Example:
 
+* Real Time System
+* Notification
+* Analytics
+* Circinfo
+* version update
+
 ```js
 setInterval(() => {
   fetch('/check-notifications');
@@ -689,6 +695,10 @@ setInterval(() => {
 
 * Simple to implement.
 * Works everywhere.
+* Short Live Connection.
+* No Persistence connection.
+* Less Resource utility
+* Problem with scale.
 
 ### ❌ Cons:
 
