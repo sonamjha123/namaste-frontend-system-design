@@ -728,12 +728,19 @@ Client makes a request and **waits** until the server has new data.
 
 * Feels more real-time than short polling.
 * Less frequent requests than short polling.
+* Single long-lived connection
+* Connection is open until you get new data/timeout.
+* 
 
 ### ❌ Cons:
 
+* Large no of connection more load
 * Server has to **hold connections**, which can be inefficient.
 * Not as fast as WebSockets.
 
+**Example**
+
+* Real Time collaboration
 ---
 
 ## 🔌 3. **WebSocket**
