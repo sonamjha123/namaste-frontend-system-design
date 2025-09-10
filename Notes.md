@@ -1152,14 +1152,6 @@ Your server processes this POST request, verifies it, and responds with `200 OK`
 * **Monitoring**: Alerting tools (Datadog, PagerDuty) notifying incidents.
 * **Automation platforms**: Zapier/IFTTT receiving triggers from apps.
 
-Here’s a simple **webhook flow diagram** showing how events move from the source (e.g., Stripe) → through a webhook → to your server → then processed.
-
-```mermaid
-flowchart LR
-    A[Event Source (e.g. Stripe)] --> B[Webhook (HTTP POST)]
-    B --> C[Your Server Endpoint]
-    C --> D[Process Event (DB / Logic)]
-
 ---
 
 
@@ -1191,7 +1183,6 @@ flowchart LR
 
 ---
 
-
 # Security
 
 Security Overview: 
@@ -1212,7 +1203,5 @@ Security Overview: 
 * CORS 
 
 **Refer notes on Namste System Design**
-
-
 
 
