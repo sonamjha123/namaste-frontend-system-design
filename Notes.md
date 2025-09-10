@@ -1192,3 +1192,27 @@ flowchart LR
 ---
 
 
+# Security
+
+Security Overview: 
+* XSS
+* CSRF
+* Authentication/Authorization
+* Input Validation/Sanitization
+* HTTPS
+* Security Headers
+* Iframe Protection
+* Dependency Injection
+* Client Storage Security
+* Compliance and regulations
+* SSRF
+* SSJI
+* Feature Flag
+* Subresource Integrity
+* CORS 
+
+**Refer notes on Namste System Design**
+
+
+
+
