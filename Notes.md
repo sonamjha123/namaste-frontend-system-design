@@ -1202,6 +1202,40 @@ Security Overview: 
 * Subresource Integrity
 * CORS 
 
-**Refer notes on Namste System Design**
+**Refer detailed notes on Namste System Design**
+#### XSS
 
+**Vulnerability**
 
+**1. User session hijacking**
+Hijacking session details like stealing cookie data
+**2. Unauthorized activities**
+Sometimes you might have seen that you don’t send any message to your friend in facebook but message is sent asking for
+money.
+**3. Capturing keystrokes**
+Getting what you are typing in keyboard
+**4. Stealing critical information**
+Getting entire DOM or entire code which consists critical information. Getting html content of the page. Bank info,
+transaction info
+**5. Phishing**
+Phishing is when attackers attempt to trick users into doing 'the wrong thing', such as clicking a bad link that will
+download malware, or direct them to a dodgy website
+
+**MITIGATION**
+**1. List all possible ways to take user input**
+Cross-site scripting(XSS) 
+url, forms, input fields
+You can trust you ex but never trust user input
+**2. Donʼt user innerHTML**
+Use innerText or textContent
+**3. Escape all user input**
+Use escaping mechanism
+Escaping characters in a string means using special sequences or symbols to represent characters that would otherwise be interpreted differently. For example, using `\n` in a string represents a newline character, and `\"` represents a double quote within a string. This allows you to include special characters without causing syntax errors or unintended behavior in your code.
+**4. Using library like React**
+Under the hood they provide lot of stuff - escaping and other stuff Avoid dangerously injecting html into DOM
+**5. Sanitize your data using libraries like DOMPurify**
+What it does is it takes care of user input data
+**6. Avoid using eval**
+eval executes code
+**7. CSP(Content security policy) Headers**
+There are many headers that can be set from the server into your application to decide what kind of resources can be loader, from where these resources can be loaded and taking control. You are in the complete control. It also helps in specifying which scripts you want to execute. All this can be handled by CSP headers.
