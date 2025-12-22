@@ -1,6 +1,7 @@
 # High-Level Design (HLD
 
-[Overview](#Overview)
+- [Overview](#Overview)
+- [Instagram_PhotoSharingApp)(#Instagram_PhotoSharingApp)
 
 ## Overview
 ## What is HLD?
@@ -166,7 +167,62 @@ getProductDetails()
 - Topic does NOT define interviewer intent
 - Never assume requirements — ask clarifying questions
 - Drive the interview based on interviewer intent
+- System Design ≠ Coding or drawing boxes
+- Focus on trade-offs, reasoning, and decisions
 
-System Design ≠ Coding or drawing boxes
+## Instagram_PhotoSharingApp
+### 1. Functional Requirements
 
-Focus on trade-offs, reasoning, and decisions
+| Module | Sub-Module | Features |
+|------|----------|---------|
+| Feed Management | Feed List | View posts in chronological / algorithmic order |
+|  | Create Post | Upload / Edit Photos |
+|  |  | Apply Filters |
+| Reels | Reels List | View short videos |
+|  | Create Reels | Upload / Edit Reels |
+| Stories | Stories List | View stories |
+|  | Create Stories | Upload / Edit Stories |
+| Engagement | Likes | Like posts / reels |
+|  | Comments | Comment on posts / reels |
+| Browse | Discovery | Explore trending content |
+| Messaging | Direct Messages | One-to-one & group chat |
+| Account Management | User Account | Settings, privacy |
+| Profile | Followers | Follow / Unfollow users |
+
+---
+
+### 2. Non-Functional Requirements
+
+| Category | Requirement Description |
+|-------|-------------------------|
+| Security | Secure APIs, data encryption |
+| Device Support | Mobile, Tablet, Desktop |
+| Authentication | Login, Signup, Session handling |
+| SEO | Public profile discoverability on search engines |
+| Accessibility | WCAG compliance |
+| Offline Support | Cached feed viewing |
+| Testing | Unit, Integration, E2E |
+| Internationalization (i18n) | Multi-language support |
+| Localization (l10n) | Region-specific formats |
+| Deployment | CI/CD, Cloud hosting |
+
+---
+```
+
+### 💡 Interview Tip
+
+In **frontend system design interviews**, start with:
+
+* **Functional (What features?)**
+* Then **Non-Functional (How well?)**
+* Finally **Trade-offs (Why this approach?)**
+
+If you want, I can:
+
+* Add **API mapping** (REST/GraphQL)
+* Create **component architecture**
+* Convert this into **scoping/prioritization**
+* Make a **senior-level answer version**
+
+Just say the word 🚀
+
