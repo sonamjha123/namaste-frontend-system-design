@@ -210,7 +210,6 @@ getProductDetails()
 
 ---
 ```
-
 flowchart LR
     %% Client Side
     subgraph Client
@@ -224,8 +223,7 @@ flowchart LR
         Services --> Storage
         Storage --> View
     end
-
-    %% Server Side
+    Server Side
     subgraph Server
         APIGW[API Gateway]
         Auth[Auth Service]
@@ -247,6 +245,31 @@ flowchart LR
 
     %% Client to Server
     Services --> APIGW
+```
 
-Just say the word 🚀
+### Component Architecture
+
+#### Feed Listing
+- **FeedList**
+  - **Feed**
+    - **PostBody**
+    - **Caption**
+    - **User Details**
+    - **Reaction**
+    - **Comment**
+
+#### Feed / Post Creation
+- **PostCreation**
+  - **Upload**
+  - **Editing**
+  - **Filter**
+  - **Caption**
+  - **Tagging**
+  - **Location**
+  - **Image Component**
+  - **Video Component**
+
+
+
+
 
