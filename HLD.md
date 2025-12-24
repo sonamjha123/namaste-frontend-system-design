@@ -172,6 +172,7 @@ getProductDetails()
 - Focus on trade-offs, reasoning, and decisions
 
 ## Instagram_PhotoSharingApp
+**Reference: https://www.geeksforgeeks.org/system-design/design-instagram-a-system-design-interview-question/**
 ### 1. Functional Requirements
 
 | Module | Sub-Module | Features |
@@ -210,20 +211,42 @@ getProductDetails()
 ---
 ```
 
-### 💡 Interview Tip
+flowchart LR
+    %% Client Side
+    subgraph Client
+        Storage[Storage\nRedux / Apollo Cache /\nLocalStorage / IndexedDB]
+        View[View Layer\nListing & Creation]
+        Controller[Controller\nFilters, Editing,\nUploads, Post Processing,\nPost Creation Flow]
+        Services[Client Services\nUpload, Post Creation,\nPost List]
 
-In **frontend system design interviews**, start with:
+        View --> Controller
+        Controller --> Services
+        Services --> Storage
+        Storage --> View
+    end
 
-* **Functional (What features?)**
-* Then **Non-Functional (How well?)**
-* Finally **Trade-offs (Why this approach?)**
+    %% Server Side
+    subgraph Server
+        APIGW[API Gateway]
+        Auth[Auth Service]
+        Upload[Upload Service]
+        PostCreate[Post Creation Service]
+        PostList[Post Listing Service]
+        DB[(Database)]
 
-If you want, I can:
+        APIGW --> Auth
+        APIGW --> Upload
+        APIGW --> PostCreate
+        APIGW --> PostList
 
-* Add **API mapping** (REST/GraphQL)
-* Create **component architecture**
-* Convert this into **scoping/prioritization**
-* Make a **senior-level answer version**
+        Auth --> DB
+        Upload --> DB
+        PostCreate --> DB
+        PostList --> DB
+    end
+
+    %% Client to Server
+    Services --> APIGW
 
 Just say the word 🚀
 
