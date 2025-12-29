@@ -1,8 +1,39 @@
 # High-Level Design (HLD
 
+- [Things_Know_SystemDesign](#Things_Know_SystemDesign)
 - [Overview](#Overview)
 - [Instagram_PhotoSharingApp](#Instagram_PhotoSharingApp)
 - 
+## Things_Know_SystemDesign
+
+#### Note : you will get better understanding by work but still learning things is better to understand the system when you get actual work.
+
+**1) Take any course and follow the complete tutorial and then use any AI for case study in detail.
+prompt that I used to learn**
+
+#### For HLD:
+- **Whenever I ask you any questions to design hld of any system, please tell me all the functional requirements you should have and then non-functional requirements.**
+   - Assume we are having millions of users and we need to handle things at scale .
+   - Tradeoff between consistency , availability for different usecase for the system..
+   - What all microservices do we need and how they communicate with each other .
+   - All the api end points which can be exposed to users.
+   - Which db can be used and why ?
+   - Tradeoff read heavy system for one service , one for write heavy and one service for balance .
+   - How Partition, replication, sharing are applied and why?
+   - Use caching wherever required .
+   - Assume p95 latency should be low .
+   - Care about failures, retry and backup strategy .
+   - Add monitoring wherever applicable
+   - How to Debug when something fails on prod.
+   - Use all the fundamentals of hld like client, dns, cdn , load balancer (l4 / l7), app server , message queue , databases , cache (   redis).
+   - Then what happens exactly when the client hits any request .
+
+#### For LLD : 
+I will tell you to design any system in upcoming chat , for those system you need to first write story like how end to end things will happen and from there you find the entities here and explain why you choose that entity and then create a relationship between them using uml diagrams  and tell methods and data which you are using there or interfaces or composition etc and then tell which design pattern you are using between different classes and why so ?
+And also ensure most of the solid principle to follow and then give code in java ..
+
+Note : you can read any blogs also , and can follow netflix , uber engineering blogs
+----------------
 
 ## Overview
 ## What is HLD?
