@@ -29,8 +29,8 @@ prompt that I used to learn**
    - Then what happens exactly when the client hits any request .
 
 #### For LLD : 
-I will tell you to design any system in upcoming chat , for those system you need to first write story like how end to end things will happen and from there you find the entities here and explain why you choose that entity and then create a relationship between them using uml diagrams  and tell methods and data which you are using there or interfaces or composition etc and then tell which design pattern you are using between different classes and why so ?
-And also ensure most of the solid principle to follow and then give code in java ..
+- I will tell you to design any system in upcoming chat , for those system you need to first write story like how end to end things will happen and from there you find the entities here and explain why you choose that entity and then create a relationship between them using uml diagrams  and tell methods and data which you are using there or interfaces or composition etc and then tell which design pattern you are using between different classes and why so ?
+- And also ensure most of the solid principle to follow and then give code in javascript ..
 
 Note : you can read any blogs also , and can follow netflix , uber engineering blogs
 ----------------
