@@ -433,8 +433,6 @@ POST /createPost
 * Optimise for slow networks and low-end devices
 * Ensure backward compatibility for older browsers
 
-```
-
 
 
 
