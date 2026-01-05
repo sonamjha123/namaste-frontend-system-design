@@ -220,11 +220,11 @@ getProductDetails()
 | Browse | Discovery | Explore trending content |
 | Messaging | Direct Messages | One-to-one & group chat |
 | Account Management | User Account | Settings, privacy |
-| Profile | Followers | Follow / Unfollow users |
+| Profile management | Followers | Follow / Unfollow users |
 
 ---
 
-### 2. Non-Functional Requirements
+### 2. Non-Functional Requirements - these are the requirements which does not directly connect but have impact on user experience.
 
 | Category | Requirement Description |
 |-------|-------------------------|
@@ -240,7 +240,7 @@ getProductDetails()
 | Deployment | CI/CD, Cloud hosting |
 
 ---
-```
+
 flowchart LR
     %% Client Side
     subgraph Client
@@ -276,7 +276,6 @@ flowchart LR
 
     %% Client to Server
     Services --> APIGW
-```
 
 ### Component Architecture
 
