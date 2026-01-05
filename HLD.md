@@ -240,7 +240,7 @@ getProductDetails()
 | Deployment | CI/CD, Cloud hosting |
 
 ---
-
+### Architecture Design
 flowchart LR
     %% Client Side
     subgraph Client
