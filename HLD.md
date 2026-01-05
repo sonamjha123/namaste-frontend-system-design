@@ -299,6 +299,35 @@ flowchart LR
   - **Image Component**
   - **Video Component**
 
+#### Data Model
+
+---
+
+## 2️⃣ Markdown + ASCII Diagram (Universal Support)
+
+               +-------------+
+               |  DataModel  |
+               +-------------+
+                      |
+        ----------------------------------------------------------------
+        |               |               |                           |
+   
+      Post           FeedList  User --> [id, name, profilephotoURL] Media --> [id, type(IMAGE/VIDEO), url]
+        |               |
+        |               v
+        |           +---------+
+        |           |  postId[], totalposts  |
+        |           +---------+
+        |
+        v
+   +----------------+
+   |id, caption,createdAt, 
+   |updatedAt, userId(who created
+   post),mediaId[], caption 
+   +----------------+
+   
+ 
+
 
 
 
