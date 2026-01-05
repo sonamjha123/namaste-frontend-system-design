@@ -315,18 +315,126 @@ flowchart LR
       Post           FeedList  User --> [id, name, profilephotoURL] Media --> [id, type(IMAGE/VIDEO), url]
         |               |
         |               v
-        |           +---------+
-        |           |  postId[], totalposts  |
-        |           +---------+
-        |
-        v
+        |          +---------+
+                  |postId[], totalposts|
+                   +---------+
    +----------------+
    |id, caption,createdAt, 
    |updatedAt, userId(who created
    post),mediaId[], caption 
    +----------------+
-   
- 
+
+## API
+
+### 1. Feed List API
+
+#### Endpoint
+```
+
+GET /feedList?pageNo=1&pageSize=20
+
+````
+
+#### Request
+- **Method:** GET
+- **Query Params:**
+  - `pageNo` — Page number
+  - `pageSize` — Number of items per page
+
+#### Response
+```json
+{
+  "data": {
+    "feeds": [],
+    "totalPosts": 0,
+    "currentPageNumber": 1,
+    "currentPageSize": 20
+  },
+  "error": {}
+}
+````
+
+---
+
+### 2. Create Post APIs
+
+Post creation can vary based on preferences and use cases.
+
+#### Option 1: Single API
+
+```
+POST /createPost
+```
+
+* Handles post metadata + media upload together
+
+#### Option 2: Separate APIs
+
+```
+POST /upload
+POST /createPost
+```
+
+* `/upload` → handles media upload
+* `/createPost` → creates post using uploaded media reference
+
+---
+
+### 3. Optimisation Strategies
+
+#### 3.1 Asset Optimisation (Images)
+
+1. Use modern image formats (e.g. **WebP**)
+2. Implement `srcset` for responsive images
+3. Serve assets based on `User-Agent`
+4. Consider **DPR** (Device Pixel Ratio)
+5. Adapt delivery based on device & network conditions
+6. Prefetch images for upcoming content
+
+---
+
+#### 3.2 Feed Optimisation
+
+1. **SSR** for above-the-fold (ATF) content
+2. Lazy loading
+
+   * Infinite scroll using **Intersection Observer**
+3. Feed virtualization
+4. Code splitting
+5. Loading shimmer / skeleton UI
+6. Preserve feed scroll position
+7. Use **Web Workers** for heavy computations
+8. Optimistic UI updates
+
+---
+
+### 4. Implementation Details
+
+#### 4.1 Image Editing
+
+* Crop / Resize → **Canvas API**
+* Filters → **CSS filters**
+
+---
+
+#### 4.2 File Upload
+
+* HTTP POST with `multipart/form-data`
+* Alternative encoding: Base64 (use cautiously)
+* Support multi-selection uploads
+* File chunking
+* Resumable uploads for reliability
+
+---
+
+### Notes
+
+* Prefer separate upload and create APIs for scalability
+* Optimise for slow networks and low-end devices
+* Ensure backward compatibility for older browsers
+
+```
+
 
 
 
