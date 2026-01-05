@@ -299,10 +299,7 @@ flowchart LR
   - **Image Component**
   - **Video Component**
 
-#### Data Model
-
----
-
+### Data Model
 ## 2️⃣ Markdown + ASCII Diagram (Universal Support)
 
                +-------------+
