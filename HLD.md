@@ -248,7 +248,6 @@ flowchart LR
         View[View Layer\nListing & Creation]
         Controller[Controller\nFilters, Editing,\nUploads, Post Processing,\nPost Creation Flow]
         Services[Client Services\nUpload, Post Creation,\nPost List]
-
         View --> Controller
         Controller --> Services
         Services --> Storage
