@@ -456,7 +456,15 @@ POST /createPost
 ### Key Takeaway
 
 Local and Session Storage are **frontend-focused**, while Cookies are **network-aware** and suitable for authentication—but must be used carefully.
-
+#### Note: This endpoint logs the user out by instructing the browser to clear cached data, cookies, and client-side storage using the `Clear-Site-Data` header.
+After cleanup, it redirects the user to the home page to ensure a clean session state.
+```
+app.get('/logout', (req, res) =>
+{
+res.setHeader('Clear-Site-Data', '"cache", "cookies", "storage"')
+res.redirect('/');
+})
+```
 ---
 
 
