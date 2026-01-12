@@ -511,6 +511,52 @@ Highly sensitive or security-critical data—forgotten cleanup can become a risk
 #### Key Takeaway
 
 Use IndexedDB only when simpler storage options are insufficient—**it’s powerful, but complexity and security must be handled carefully**.
+---------------------
+
+### API Caching
+
+API caching reduces unnecessary network calls by storing and reusing previously fetched responses.
+
+### Popular Libraries
+
+* **React Query** – Cache-first, background revalidation, retry support
+* **SWR** – Stale-while-revalidate strategy
+* **Axios** – Requires custom or interceptor-based caching
+* **Apollo Client** – Built-in normalized caching for GraphQL
+
+---
+
+#### Common Caching Strategies
+
+**Cache First**
+Returns data from the cache if available; otherwise, fetches from the network and updates the cache.
+
+**Network Only**
+Always fetches data from the network. Cache may be written to, but it is never read.
+
+**Cache and Network**
+Returns cached data immediately (if available) and simultaneously fetches fresh data from the network. Updates cache and UI once the request completes.
+
+**Network First (Cache Fallback)**
+Fetches data from the network first. If the request fails, cached data is used as a fallback.
+
+**No Cache**
+Bypasses the cache entirely—does not read from or write to it. Every request goes to the network.
+
+---
+
+#### Important Notes
+
+* **Network-only** may still write data to the cache depending on implementation
+* **No-cache** does not interact with the cache at all
+* Strategy choice depends on **latency tolerance, data freshness, and offline support**
+
+---
+
+#### Key Takeaway
+
+Choosing the right API caching strategy is a balance between **performance, consistency, and user experience**.
+
 
 
 
