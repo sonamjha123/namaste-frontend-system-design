@@ -1,8 +1,11 @@
-# Table of Contents
-[#Real-Time Communication in Web Applications](#Real_TimeCommunicationinWebApplications)
-# 📘 Frontend System Design Notes
+# 📘 Frontend LLD System Design Notes
+
+## Table of Contents
+[#Component Design](#Component Design)
+
 
 ---
+
 
 ## 🔹 1. Component Design
 
