@@ -3,6 +3,7 @@
 - [Things_Know_SystemDesign](#Things_Know_SystemDesign)
 - [Overview](#Overview)
 - [Instagram_PhotoSharingApp](#Instagram_PhotoSharingApp)
+- [Database_Modules_Caching](#Database_Modules_Caching)
 - 
 ## Things_Know_SystemDesign
 
@@ -431,6 +432,32 @@ POST /createPost
 * Optimise for slow networks and low-end devices
 * Ensure backward compatibility for older browsers
 
+### Database_Modules_Caching
+## Local Storage vs Session Storage vs Cookies
+
+| Feature            | Local Storage                         | Session Storage                     | Cookies                       |
+| ------------------ | ------------------------------------- | ----------------------------------- | ----------------------------- |
+| Storage Type       | Browser client-side storage           | Browser client-side storage         | Client–server storage         |
+| Data Persistence   | Persists across browser sessions      | Cleared on tab/window close         | Session-based or expiry-based |
+| Scope              | Shared across all tabs of same origin | Limited to single tab               | Sent with every HTTP request  |
+| Size Limit         | ~5 MB per domain                      | ~5 MB per domain                    | ~4 KB per domain              |
+| Performance        | Synchronous (can block main thread)   | Synchronous (can block main thread) | Affects request/response size |
+| Data Structure     | Key–value (string only)               | Key–value (string only)             | Key–value (string only)       |
+| Server Access      | ❌ Not sent to server                  | ❌ Not sent to server                | ✅ Sent automatically          |
+| Security Risks     | Vulnerable to XSS                     | Vulnerable to XSS                   | Vulnerable to XSS & CSRF      |
+| Security Controls  | Manual encryption                     | Manual encryption                   | HttpOnly, Secure, SameSite    |
+| Expiration Control | Manual                                | Session-based                       | Expiry / Max-Age              |
+| Offline Support    | ✅ Yes                                 | ✅ Yes                               | ❌ Limited                     |
+| Typical Use Cases  | User preferences, UI state            | Temporary form data                 | Auth, sessions, tracking      |
+| When Not to Use    | Sensitive data, tokens                | Large or long-term data             | Large or sensitive payloads   |
+
+---
+
+### Key Takeaway
+
+Local and Session Storage are **frontend-focused**, while Cookies are **network-aware** and suitable for authentication—but must be used carefully.
+
+---
 
 
 
