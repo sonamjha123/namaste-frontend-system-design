@@ -1,13 +1,13 @@
 # 📘 Frontend LLD System Design Notes
 
 ## Table of Contents
-[#Component Design](#Component Design)
+[#Component_Design](#Component_Design)
 
 
 ---
 
 
-## 🔹 1. Component Design
+## 🔹 1. Component_Design
 
 * **Single Responsibility Principle (SRP)**
 
