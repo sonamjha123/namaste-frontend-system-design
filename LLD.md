@@ -7,7 +7,7 @@
 ---
 
 
-## 🔹 1. Component_Design
+## Component_Design
 
 * **Single Responsibility Principle (SRP)**
 
