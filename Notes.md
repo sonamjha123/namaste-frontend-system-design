@@ -1,5 +1,3 @@
-
-
 # 🛰️ Communication Protocols
 
 Understanding common communication protocols used in web and network applications.
