@@ -1,3 +1,272 @@
+# Networking: How Web Works
+When you type [www.codefirstgirls.com](http://www.codefirstgirls.com) in Delhi, your request travels through many networks — mostly over optical fiber cables — and reaches servers that may be in London or another nearby data center/CDN location.
+
+Here’s the journey in simple steps.
+
+### The journey from Delhi to the website
+
+![High bandwidth fibre optical cable system spanning 15,000 km between Europe, the Middle East and India](https://images.openai.com/static-rsc-4/Y_o0DB2BUKY_QxahWOMQWtfk6jwEl1TPPpAPCR2nTNwAlBYx1B7RYQ9emGgmdrmtdVishNviijnG2lzt3tgpMzvCgFTh_qTvuywS9DWsXUlP6bJhrb8d1tQCCzJUUAd2DtE3txLbh6U0Vh_C_Uyfcji-tXtv9_EgB_twPuX8Pqh60SOiKIKMSyssYeKpk9E6?purpose=fullsize)
+
+### Simplified route
+
+Mostly optical fiber
+
+You
+
+Delhi
+
+Wi-Fi / Mobile
+
+Router
+
+Local ISP
+
+India backbone
+
+fiber network
+
+Undersea fiber cable
+
+India → Europe / UK
+
+London
+
+ISP / data center
+
+Code First Girls
+
+Web server
+
+The response then travels back to you through the network.
+
+### Step by step
+
+### 1. Your browser asks: “Where is this website?”
+
+You type:
+
+### URL entered
+
+### [www.codefirstgirls.com](http://www.codefirstgirls.com)
+
+Your computer does not know the server’s IP address yet, so it asks a DNS server (Domain Name System).
+
+### DNS works like the internet’s phonebook
+
+DNS translates:
+
+[www.codefirstgirls.com](http://www.codefirstgirls.com)
+
+IP address
+
+Example: 104.x.x.x (not exact)
+
+This DNS lookup usually takes only a few milliseconds.
+
+### 2. Your request goes to your ISP
+
+![BSNL FTTH Broadband & ONT Modem Overview](https://images.openai.com/static-rsc-4/VEDFwb19wQHvkWLH8CBsQh2JZiHbAXNOnhTG5GrpxZgexIeVeBesGQM5kwWcjhzZNPKRvrt-H2F-fcxckbObk9P2f_jo91DYIxJFj6-VYWGCt0mX4xeH6QeY78ixVvw66gVKaOCCejSVsRCT59gNvFsliurQ4xDOA4leERnkUlCbBvp2vJaqlGBFjX9DkoAr?purpose=fullsize)
+
+The request leaves your device:
+
+* Laptop / phone
+
+* Wi-Fi router or mobile tower
+
+* Local ISP (Jio, Airtel, ACT, BSNL, etc.)
+
+### Inside Delhi
+
+Your data is already traveling through optical fiber cables (or short wireless links first, such as Wi-Fi or 4G/5G).
+
+### 3. It enters India’s long-distance fiber backbone
+
+![PPT - NORTHERN REGIONAL LOAD DISPATCH CENTER 12 th June 2004 PowerPoint Presentation - ID:6066766](https://images.openai.com/static-rsc-4/ptZYAk11uMzSkl2MRhzBwyd8_Zn2fqK0BeevCOOf2pXVpz6o_mLlcWo8ChNrGKxb24GD5iP7LxcvrtIRrQ9xa-lJ2AuKv9CFkz0YMqwMNcNtb3DTaJPhFwGyXlW7qrv0IoWkiergZFfP1sPutyk3_8AhVXG2JF_vpIgYLQZ7LSuISZrk40DspdCfu-iHEJCX?purpose=fullsize)
+
+Your ISP sends the data through high-capacity backbone fiber across India.
+
+Typical path:
+
+DelhiMumbai / ChennaiInternational gateway
+
+Mumbai is a major international internet gateway for India because many submarine cables land there.
+
+### 4. It enters an undersea optical fiber cable
+
+![The Most Vulnerable Place on the Internet | WIRED](https://images.openai.com/static-rsc-4/iHqJJBoFf6HanF51N_yNnUKP5erhAA3sJjdbWRuPKk0iZmxcStOZXnP_xLQp1V_Xxij1Hkf-UXBEEO3GX26znpLUUHsueE9DUX895hQ9B-o7jihNHpgMosmQA-_wPzdVxYXQG5E4T50IKdQMmCxN5shRIVwIs2Btb8Z5Vv1VKasBkb6luL4y7lBbq6JXekKz?purpose=fullsize)
+
+![中国联通国际海底电缆 | 柴郡猫](https://images.openai.com/static-rsc-4/cGPZYI_TfZaKGqAATlXo_swHP9fb4XLB9YhFs90y0bOqtBz7a67CrikTmAn4mebyT6qojUZ9npAXHqgFK5f_MKjYC3_TkmuTwL4EVq9ohifX_TM_16wj2tJZiMioBsq7bnZmF-Of0OwtpuNHOjCibAK6W2s5V6K6GgJ-NY0Po0YZ1PFCEKNY36bSh98SZv_b?purpose=fullsize)
+
+![PNG DataCo : Leading the Digital Transformation](https://images.openai.com/static-rsc-4/Pje1uhOrpAuUyo2RP7H1MnOzBagcYXvLVl3Xsd5xpjBByivNLYJWLTF0Ql4nEMq61R34Brr7Da-Bz_QtyLbnZAydyKaTupHyCWgiVvCFIuhnEb88q8DsyfKzKs76XF5LQbtXmQ7afSjmKTkvJG_YvVcQ_TPG0VvVa6f6ApcxrkieQzXY3XbUpX-WCJaod-_U?purpose=fullsize)
+
+6
+
+### This is the important part
+
+Your data is converted into pulses of light
+
+and sent through a glass fiber thinner than a human hair.
+
+### Possible cable route
+
+The light may travel something like:
+
+MumbaiArabian SeaMiddle East
+
+Red SeaMediterraneanEuropeUK / London
+
+This whole journey is mostly under the ocean in submarine fiber cables.
+
+### 5. Routers along the way choose the path
+
+![Techills | IT Solutions & Services](https://images.openai.com/static-rsc-4/sBiNd1eUCnufVatmVDAOXa1A1cLKswFP3VzEoyDaiYTcJY6-UziEgyrcccvOh5T6WEjvWN3A24B4GkI073RsOkIFxLgdtVqqEmEyytztTjtmyzVrHhs7F9oHWTXMsG7LOzctbt38vAPUKuT98CLV912mFMCjbX2fTK7YzjBnQgt0imkQV4fGSACQU6wOSwoO?purpose=fullsize)
+
+Your request is broken into small packets.
+
+At each major network point, a router decides the next best path.
+
+### The packets may pass through
+
+* Indian ISP backbone routers
+
+* International carrier routers
+
+* Submarine cable landing stations
+
+* European backbone networks
+
+* UK data center routers
+
+### This happens automatically in milliseconds.
+
+### 6. The request reaches the website server
+
+![Financial Services Colocation London – Secure and Sustainable | NTT](https://images.openai.com/static-rsc-4/4McnLiFxjfpWElD1TKnlnxQl-m-qr7L6o4tUlRpawdpjA0e-PeZqEFMvfR6tMhLVcLCJOeW6mMB_Ay_DRDEiXJqdKTeYdQ1XnS0qqeDyzazSYvl7G7qn1kQ70lGXIrR6ywkWgopqQzNJzwtxzj9WfbauPHjzd9BCL9y89-4uKHvcLPCN2I1MkUa9zVLPz5Ze?purpose=fullsize)
+
+Eventually, the request reaches a server hosting Code First Girls.
+
+### The server receives
+
+GET /
+
+(send me the homepage)
+
+The server then prepares:
+
+* HTML
+
+* CSS
+
+* JavaScript
+
+* Images
+
+* Fonts
+
+### 7. The response comes back to Delhi
+
+![India to USA Fiber Optic Connection Details: | Sahana. Venkatesh](https://images.openai.com/static-rsc-4/KIQOqZwPuA0gafohqKWIX8IGjtoK6AuMp_Jolm82tUGoG1Loq1tvdM8NiHtZhW8dfmeuwkO0VEsB4AZN4LKbKzob7yauLH116VrI558R4VWIzqM4rWwXkzrDZTtpZO5u_z8bH8TjV52Oo3RM66b5hDGyvCZFqzv91K2DPuY7Yuo4xeQ8r9QsCCC1Oq3v1xYd?purpose=fullsize)
+
+The response travels back through the internet backbone.
+
+LondonEuropeSubmarine cable
+
+MumbaiDelhiYour browser
+
+Your browser receives the files and renders the webpage.
+
+### What is actually traveling?
+
+### Not the whole webpage as one object
+
+Instead, thousands of small packets travel:
+
+| Packet contains | Example                       |
+| --------------- | ----------------------------- |
+| Source IP       | Your ISP / device             |
+| Destination IP  | Website server                |
+| Data            | Part of HTML / image / script |
+| Order number    | So browser can reassemble     |
+
+Your browser puts all packets back together.
+
+### How long does this take?
+
+### Typical latency
+
+Delhi → London
+
+### About 120–180 ms round trip
+
+| Part                           | Time        |
+| ------------------------------ | ----------- |
+| DNS lookup                     | 5–20 ms     |
+| Delhi → Mumbai                 | 10–20 ms    |
+| India → UK via submarine cable | 60–100 ms   |
+| Server processing              | 10–30 ms    |
+| Return journey                 | same        |
+| Total                          | ~120–180 ms |
+
+That is less than 0.2 seconds!
+
+### What if the undersea cable is damaged?
+
+![Facebook, Google, Microsoft, dan MyIX persoal keupayaan Malaysia baiki kabel dasar laut? - SoyaCincau BM](https://images.openai.com/static-rsc-4/EUcW3gOjtLT4Ib8OkX1BIPM6T_J6n9vvfWFvUYuGERUqNkatWtZUjLndkwBS0YBLIy_MHjYXMR6KkEvr0iounW8TonNKiz-7iWUELBWKWFkXP5oT4JKbXUegsOUs3dH7TgSpXDF-jdWYw6S1LCEJIqI-N6cF305q0VDsynhLLYLygRJOsOj0cQs52NcBMGOf?purpose=fullsize)
+
+If one cable between India and Europe is cut:
+
+### Usually your website still opens
+
+Routers automatically reroute packets through another cable.
+
+### Possible backup route
+
+IndiaSingaporeEast Asia
+
+Pacific / EuropeUK
+
+### You may notice
+
+* Slightly slower loading
+
+* Higher latency
+
+* Rarely, temporary outage if multiple cables fail
+
+### One more important thing: CDN
+
+![Designing High-Performance Fintech SaaS with Redis and CDNs - DEV Community](https://images.openai.com/static-rsc-4/dcp2ofGWxO5d2nqwo8lCIskPnrNuO2v3ewpIH93MPEc7vepcshEM-Or2mnyn77DI6QedBCXuHM-a5Uz0HecPVt6OaIsU6HMdZBp-7UIVVOv9PLGn_N97991ku419kgIcbf7vHJzupwtPZOycwWPzFH4LQ-3E20yve4FBIWbeFQUD4tD7mSk6gJgJLzWlyMtK?purpose=fullsize)
+
+Even if Code First Girls is based in London, some files may be served from a CDN (Content Delivery Network) edge server closer to India.
+
+### For example
+
+* HTML may come from London.
+
+* Images may come from Mumbai.
+
+* Fonts may come from Singapore.
+
+* JavaScript may come from a nearby CDN node.
+
+This makes websites load faster.
+
+### The whole story in one sentence
+
+### In simple words
+
+When you type [www.codefirstgirls.com](http://www.codefirstgirls.com) in Delhi, your browser asks DNS for the server’s IP, sends packets through your ISP, India’s backbone fiber, undersea optical fiber cables, and UK networks to the server, then receives the webpage back — all in about 0.15 seconds.
+
+### The key takeaway
+
+### Yes — almost the entire long-distance journey is through optical fiber.
+
+Your data is literally traveling as flashes of light through glass fibers under land and sea.
+
+That is why you can open a London-based website from Delhi almost instantly.
+
+If you'd like, I can also show you the actual real-world route that packets from Delhi to [www.codefirstgirls.com](http://www.codefirstgirls.com) take today (using traceroute), and explain each hop one by one.
+
 # 🛰️ Communication Protocols
 
 Understanding common communication protocols used in web and network applications.
